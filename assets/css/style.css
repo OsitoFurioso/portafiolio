@@ -247,6 +247,9 @@ h6 {
     position: relative;
     z-index: 2;
     min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 #portada h1 {
@@ -255,7 +258,7 @@ h6 {
     font-weight: 750;
     line-height: 56px;
     color: #149ddd;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
 
 }
 
@@ -1003,4 +1006,7 @@ section {
         position: static;
         width: auto;;
     }
+}
+.notificacion{
+color: red;
 }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Products List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: rgb(53, 73, 104);
+            border-radius: 20px;
+        
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background-color: #d95a5a;
+        }
+        
+        img {
+            max-width: 70%;
+            max-height: 50%;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla de productos</h1>
+
+    <table id="tabla-productos"></table>
+    
+    <script>
+        fetch('productos.json')
+            .then(response => {
+                if (response.ok) {
+                    console.log("La respuesta es Ok")
+                    return response.text();         
+                } else {
+                    throw new Error('Error al cargar los datos');
+                }
+            })
+            .then(data => {
+                const productos = JSON.parse(data);
+                const tabla = document.getElementById('tabla-productos');
+                
+                // Encabezado de la tabla
+                let encabezado = '<tr><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Foto</th></tr>';
+                
+                // Filas de la tabla
+                let filas = '';
+                productos.forEach(producto => {
+                    filas += `<tr><td>${producto.nombre}</td><td>${producto.descripcion}</td><td>${producto.precio}</td><td><img src="${producto.foto}"></td></tr>`;
+                });
+                
+                tabla.innerHTML = encabezado + filas;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</body>
+</html>

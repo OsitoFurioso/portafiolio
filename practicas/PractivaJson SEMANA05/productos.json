@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Oppenheimer-Diamante azul",
+    "descripcion": "Con 14.62 quilates, Oppenheimer es el diamante azul más grande jamás vendido en subasta.",
+    "precio": "57,5 millones de dólares",
+    "foto": "img/diamante-Azul.webp"
+  },
+  {
+    "nombre": "Hope Spinel-Espinela",
+    "descripcion": "Con 50.13 quilates, Hope Spinel es una joya de color raro que estableció un récord mundial en 2015",
+    "precio": "1,4 millones de dólares ",
+    "foto": "img/hope-3428558b.webp"
+  },
+  {
+    "nombre": "Moussaieff-Diamante rojo",
+    "descripcion": "De 5.11 quilates, Moussaieff es el diamante rojo más grande clasificado. Los diamantes rojos son notoriamente raros",
+    "precio": "8 millones de dólares",
+    "foto": "img/moussaieff-red-diamond-ring-.webp"
+  },
+  {
+    "nombre": "Pink Star-Diamante rosa",
+    "descripcion": "Este diamante rosa de 59,60 quilates se vendió en 2017 por 71,2 millones de dólares en Hong Kong.",
+    "precio": "71,2 millones de dólares",
+    "foto": "img/pink-dream-diamond-436x420.jpg"
+  },
+  {
+    "nombre": "Sunrise Ruby-Rubí",
+    "descripcion": "Con un peso de 25,59 quilates, el rubí birmano Sunrise Ruby estableció un nuevo récord mundial en 2015",
+    "precio": "30,42 millones de dólares ",
+    "foto": "img/sunrise-ruby-cke.webp"
+  }
+]

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica</title>
+    <center><h1>PRÁCTICA</h1></center>
+    <style>
+        body {
+            background-color: #8fb87f;
+        }
+
+        .container {
+            margin: 0 auto;
+            border: 2px solid red;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .pelota {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: red;
+            margin-bottom: 20px;
+            animation: derecha 2.5s linear infinite;
+        }
+
+        @keyframes derecha {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(1200px);
+            }
+        }
+
+        @keyframes izquierda {
+            0% {
+                transform: translateX(1200px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateX(0px) rotate(180deg);
+            }
+        }
+
+        .btn {
+            background-color: greenyellow;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            cursor: pointer;
+            border-radius: 20px;
+
+        }
+
+        .btn:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pelota" id="pelota"></div>
+        <div class="button">
+            <button class="btn" id="play">play</button>
+            <button class="btn" id="pause">pause</button>
+            <button class="btn" id="stop">stop</button>
+            <button class="btn" id="reverse">reverse</button>
+        </div>
+    </div>
+
+    <script>
+        const pelota = document.getElementById("pelota");
+        const playBtn = document.getElementById("play");
+        const pauseBtn = document.getElementById("pause");
+        const reverseBtn = document.getElementById("reverse");
+
+        let reverse = false;
+        let animationDirection = 1; // animación inicial hacia la derecha
+
+        playBtn.addEventListener("click", () => {
+            pelota.style.animationPlayState = "running";
+        });
+
+        pauseBtn.addEventListener("click", () => {
+            pelota.style.animationPlayState = "paused";
+        });
+
+        reverseBtn.addEventListener("click", () => {
+            if (!reverse) {
+                animationDirection = -1; // cambiar la dirección a izquierda
+                reverse = true;
+            } else {
+                animationDirection = 1; // cambiar la dirección a derecha
+                reverse = false;
+            }
+            pelota.style.animationDirection = animationDirection === 1 ? "normal" : "reverse";
+            pelota.style.animationPlayState = "running";
+        });
+
+    </script>
+</body>
+
+</html>
